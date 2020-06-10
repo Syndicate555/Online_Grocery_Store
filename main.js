@@ -98,6 +98,17 @@ class UI {
   addCartItem(item) {
     const div = document.createElement("div");
     div.classList.add("cart-item");
+    div.innerHTML = `<img src="./images/1.jpg" />
+      <div>
+        <h4>Brocolli</h4>
+        <h5>$1.99</h5>
+        <span class="remove-item">remove</span>
+      </div>
+      <div>
+        <i class="fas fa-chevron-up"></i>
+        <p class="item-amount">1</p>
+        <i class="fas fa-chevron-down"></i>
+      </div>`;
   }
 }
 
