@@ -32,7 +32,9 @@ class Products {
 
 // displaying the products
 class UI {
-  displayProducts(products) {}
+  displayProducts(products) {
+    let result = "";
+  }
 }
 
 // local storage
