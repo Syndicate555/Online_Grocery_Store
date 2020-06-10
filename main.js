@@ -81,6 +81,7 @@ class UI {
         cart = [...cart, cartItem];
         Storage.saveCart(cart);
         this.setCartValues(cart);
+        this.addCartItem(cartItem);
       });
     });
   }
@@ -93,6 +94,10 @@ class UI {
     });
     cartTotal.innerText = parseFloat(tempTotal.toFixed(2));
     cartItems.innerText = itemsTotal;
+  }
+  addCartItem(item) {
+    const div = document.createElement("div");
+    div.classList.add("cart-item");
   }
 }
 
