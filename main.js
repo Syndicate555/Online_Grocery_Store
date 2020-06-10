@@ -34,6 +34,19 @@ class Products {
 class UI {
   displayProducts(products) {
     let result = "";
+    products.forEach((product) => {
+      result += `<article class="product">
+          <div class="img-container">
+            <img src="./images/1.jpg" alt="" class="product-img" />
+            <button class="bag-btn" data-id="1">
+              <i class="fas fa-shopping-cart"></i>
+              Add to cart
+            </button>
+          </div>
+          <h3>Brocolli</h3>
+          <h4>$1.99</h4>
+        </article>`;
+    });
   }
 }
 
