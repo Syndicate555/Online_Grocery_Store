@@ -78,9 +78,14 @@ class UI {
         let cartItem = { ...Storage.getProduct(id), amount: 1 };
 
         cart = [...cart, cartItem];
-        console.log(cart);
+        Storage.saveCart(cart);
+        this.setCartValues(cart);
       });
     });
+  }
+  setCartValues(cart) {
+    let tempTotal = 0;
+    let itemsTotal = 0;
   }
 }
 
@@ -93,6 +98,10 @@ class Storage {
   static getProduct(id) {
     let products = JSON.parse(localStorage.getItem("products"));
     return products.find((product) => product.id === id);
+  }
+
+  static saveCart(cart) {
+    localStorage.setItem("cart", JSON.stringify(cart));
   }
 }
 
