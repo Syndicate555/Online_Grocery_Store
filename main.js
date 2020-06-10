@@ -75,7 +75,7 @@ class UI {
         event.target.innerText = "In Cart";
         event.target.disabled = true;
 
-        let cartItem = { ...Storage.getProduct(id) };
+        let cartItem = { ...Storage.getProduct(id), amount: 1 };
         console.log(cartItem);
       });
     });
