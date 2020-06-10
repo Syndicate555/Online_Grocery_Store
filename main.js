@@ -70,12 +70,14 @@ class UI {
       if (inCart) {
         button.innerText = "In Cart";
         button.disabled = true;
-      } else {
-        button.addEventListener("click", (event) => {
-          event.target.innerText = "In Cart";
-          event.target.disabled = true;
-        });
       }
+      button.addEventListener("click", (event) => {
+        event.target.innerText = "In Cart";
+        event.target.disabled = true;
+
+        let cartItem = { ...Storage.getProduct(id) };
+        console.log(cartItem);
+      });
     });
   }
 }
@@ -84,6 +86,11 @@ class UI {
 class Storage {
   static saveProducts(products) {
     localStorage.setItem("products", JSON.stringify(products));
+  }
+
+  static getProduct(id) {
+    let products = JSON.parse(localStorage.getItem("products"));
+    return products.find((product) => product.id === id);
   }
 }
 
