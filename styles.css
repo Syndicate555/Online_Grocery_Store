@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css?family=Lato:400,700");
 
 :root {
-  --primaryColor: #73eb4f;
+  --primaryColor: #58c237;
   --mainWhite: #fff;
   --mainBlack: #222;
   --mainGrey: #ececec;
@@ -90,6 +90,7 @@ body {
   color: var(--primaryColor);
 }
 
+/* products*/
 .products {
   padding: 4rem 0;
 }
