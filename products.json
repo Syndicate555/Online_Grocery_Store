@@ -53,7 +53,7 @@
       "fields": {
         "title": "pumpkin",
         "price": 3.59,
-        "image": { "fields": { "file": { "url": "./images/7.jpg" } } }
+        "image": { "fields": { "file": { "url": "./images/p7.jpg" } } }
       }
     },
     {
@@ -61,15 +61,7 @@
       "fields": {
         "title": "watermelon",
         "price": 3.99,
-        "image": { "fields": { "file": { "url": "./images/8.jpg" } } }
-      }
-    },
-    {
-      "sys": { "id": "9" },
-      "fields": {
-        "title": "watermelon",
-        "price": 3.99,
-        "image": { "fields": { "file": { "url": "./images/product-8.jpeg" } } }
+        "image": { "fields": { "file": { "url": "./images/p8.jpg" } } }
       }
     }
   ]
