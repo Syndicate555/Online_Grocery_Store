@@ -12,8 +12,8 @@ let cart = [];
 
 // getting the products
 class Products {
-  getProducts() {
-    fetch();
+  async getProducts() {
+    let result = await fetch("products.json");
   }
 }
 
