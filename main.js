@@ -16,6 +16,7 @@ class Products {
     try {
       let result = await fetch("products.json");
       let data = await result.json();
+
       let products = data.items;
       products = products.map((item) => {
         const { title, price } = item.fields;
@@ -23,7 +24,9 @@ class Products {
         const image = item.fields.image.fields.file.url;
         return { title, price, id, image };
       });
-      return data;
+      console.log(products);
+
+      return products;
     } catch (error) {
       console.log(error);
     }
@@ -35,18 +38,27 @@ class UI {
   displayProducts(products) {
     let result = "";
     products.forEach((product) => {
-      result += `<article class="product">
-          <div class="img-container">
-            <img src=${product.image} alt="" class="product-img" />
-            <button class="bag-btn" data-id=${product.id}>
-              <i class="fas fa-shopping-cart"></i>
-              Add to cart
-            </button>
-          </div>
-          <h3>${product.title}</h3>
-          <h4>${product.price}</h4>
-        </article>`;
+      result += `
+       <!-- single product -->
+            <article class="product">
+              <div class="img-container">
+                <img
+                  src=${product.image}
+                  alt="product"
+                  class="product-img"
+                />
+                <button class="bag-btn" data-id=${product.id}>
+                  <i class="fas fa-shopping-cart"></i>
+                  add to bag
+                </button>
+              </div>
+              <h3>${product.title}</h3>
+              <h4>$${product.price}</h4>
+            </article>
+            <!-- end of single product -->
+       `;
     });
+    productsDOM.innerHTML = result;
   }
 }
 
