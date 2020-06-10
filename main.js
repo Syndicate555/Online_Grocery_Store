@@ -82,6 +82,7 @@ class UI {
         Storage.saveCart(cart);
         this.setCartValues(cart);
         this.addCartItem(cartItem);
+        this.showCart();
       });
     });
   }
@@ -98,19 +99,31 @@ class UI {
   addCartItem(item) {
     const div = document.createElement("div");
     div.classList.add("cart-item");
-    div.innerHTML = `<img src = ${item.image} />
-      <div>
-        <h4>${item.title}</h4>
-        <h5>$${item.price}</h5>
-        <span class="remove-item" data-id = ${item.id}>remove</span>
-      </div>
-      <div>
-        <i class="fas fa-chevron-up" data-id = ${item.id}></i>
-        <p class="item-amount">${item.amount}</p>
-        <i class="fas fa-chevron-down" data-id = ${item.id}></i>
-      </div>`;
+    div.innerHTML = `<!-- cart item -->
+            <!-- item image -->
+            <img src=${item.image} alt="product" />
+            <!-- item info -->
+            <div>
+              <h4>${item.title}</h4>
+              <h5>$${item.price}</h5>
+              <span class="remove-item" data-id=${item.id}>remove</span>
+            </div>
+            <!-- item functionality -->
+            <div>
+                <i class="fas fa-chevron-up" data-id=${item.id}></i>
+              <p class="item-amount">
+                ${item.amount}
+              </p>
+                <i class="fas fa-chevron-down" data-id=${item.id}></i>
+            </div>
+          <!-- cart item -->
+    `;
     cartContent.appendChild(div);
     console.log(cartContent);
+  }
+  showCart() {
+    cartOverlay.classList.add("transparentBcg");
+    cartDOM.classList.add("showCart");
   }
 }
 

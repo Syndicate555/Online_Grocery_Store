@@ -182,7 +182,7 @@ body {
   height: 100%;
   overflow: scroll;
   z-index: 3;
-  background: rgb(231, 226, 221);
+  background: rgb(255, 255, 255);
   padding: 1.5rem;
   transition: var(--mainTransition);
   transform: translateX(100%);
