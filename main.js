@@ -62,6 +62,10 @@ class UI {
   }
   getBagButtons() {
     const buttons = [...document.querySelectorAll(".bag-btn")];
+    buttons.forEach((button) => {
+      let id = button.dataset.id;
+      let inCart = cart.find((item) => item.id === id);
+    });
   }
 }
 
