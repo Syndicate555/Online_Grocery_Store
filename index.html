@@ -11,6 +11,37 @@
       integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
       crossorigin="anonymous"
     />
+    <link
+      href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i&display=swap"
+      rel="stylesheet"
+    />
+    <link href="styles/style.css" rel="stylesheet" type="text/css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Amatic+SC:400,700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css" />
+    <link rel="stylesheet" href="css/animate.css" />
+
+    <link rel="stylesheet" href="css/owl.carousel.min.css" />
+    <link rel="stylesheet" href="css/owl.theme.default.min.css" />
+    <link rel="stylesheet" href="css/magnific-popup.css" />
+
+    <link rel="stylesheet" href="css/aos.css" />
+
+    <link rel="stylesheet" href="css/ionicons.min.css" />
+
+    <link rel="stylesheet" href="css/bootstrap-datepicker.css" />
+    <link rel="stylesheet" href="css/jquery.timepicker.css" />
+
+    <link rel="stylesheet" href="css/flaticon.css" />
+    <link rel="stylesheet" href="css/icomoon.css" />
+    <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
     <!--navbar-->
@@ -29,6 +60,7 @@
       </div>
     </nav>
     <!-- end of nav-->
+    <br />
     <!--hero-->
     <header class="hero">
       <div class="banner">
@@ -37,11 +69,60 @@
       </div>
     </header>
     <!--end of hero-->
+    <!--Customization-->
+    <div style="align-self: center;">
+      <!-- Tab links, each one with an onclick event associated with it -->
+      <div class="tab" style="align-items: center;">
+        <button class="tablinks" onclick="openInfo(event, 'Client')">
+          Client
+        </button>
+      </div>
+
+      <!-- Tab content -->
+      <div id="Client" class="tabcontent">
+        <h3>Client Information</h3>
+        <p>Tell us a bit about you.</p>
+        Choose your Ideal Category of Diet:
+        <select
+          id="dietSelect"
+          name="dietSelect"
+          onchange="populateListProductChoices(this.id, 'displayProduct')"
+        >
+          <option value=""></option>
+          <option value="Vegetarian">Vegetarian Only</option>
+          <option value="VegetarianAndGlutenFree"
+            >Vegetarian and Gluten-Free</option
+          >
+          <option value="GlutenFree">GlutenFree Only</option>
+          <option value="None">None</option>
+        </select>
+        <br />
+        <br />
+        <div>
+          <label
+            ><input
+              type="checkbox"
+              name="Organic"
+              value="Organic"
+            />Organic</label
+          >
+          <label
+            ><input
+              type="checkbox"
+              name="NonOrganic"
+              value="NonOrganic"
+            />Non-Organic</label
+          >
+        </div>
+        <button onclick="myFunction()">Show Me Items:</button>
+      </div>
+    </div>
+    <!-- End of Customization-->
     <!--Products-->
     <section class="products">
       <div class="section-title">
         <h2>
-          Grocery Items
+          Grocery Items Based on your Dietary Requirements:
         </h2>
       </div>
       <div class="products-center"></div>
@@ -75,5 +156,6 @@
       <a href="https://saffataziz.site/" target="_blank">Saffat Aziz</a>
     </footer>
     <script src="main.js"></script>
+    <script src="./scripts/main.js"></script>
   </body>
 </html>

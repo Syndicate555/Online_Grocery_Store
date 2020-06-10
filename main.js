@@ -245,11 +245,13 @@ class Storage {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
+  // get all products
+});
+
+function myFunction() {
   const ui = new UI();
   const products = new Products();
   ui.setupAPP();
-
-  // get all products
   products
     .getProducts()
     .then((products) => {
@@ -260,4 +262,4 @@ document.addEventListener("DOMContentLoaded", () => {
       ui.getBagButtons();
       ui.cartLogic();
     });
-});
+}
