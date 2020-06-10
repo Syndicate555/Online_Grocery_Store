@@ -9,6 +9,7 @@ const cartTotal = document.querySelector(".cart-total");
 const productsDOM = document.querySelector(".products-center");
 
 let cart = [];
+let buttonsDOM = [];
 
 // getting the products
 class Products {
@@ -62,9 +63,19 @@ class UI {
   }
   getBagButtons() {
     const buttons = [...document.querySelectorAll(".bag-btn")];
+    buttonsDOM = buttons;
     buttons.forEach((button) => {
       let id = button.dataset.id;
       let inCart = cart.find((item) => item.id === id);
+      if (inCart) {
+        button.innerText = "In Cart";
+        button.disabled = true;
+      } else {
+        button.addEventListener("click", (event) => {
+          event.target.innerText = "In Cart";
+          event.target.disabled = true;
+        });
+      }
     });
   }
 }
