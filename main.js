@@ -7,3 +7,5 @@ const cartOverlay = document.querySelector(".cart-overlay");
 const cartItems = document.querySelector(".cart-items");
 const cartTotal = document.querySelector(".cart-total");
 const productsDOM = document.querySelector(".products-center");
+
+let cart = [];
